@@ -1,7 +1,7 @@
 # exclude everything except **/src directories
 !/part*
-/part*/*
-!/part*/src
+# /part*/*
+# !/part*/src
 /part*/src/__pycache__/
 
 # Byte-compiled / optimized / DLL files
