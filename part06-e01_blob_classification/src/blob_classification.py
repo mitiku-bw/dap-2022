@@ -2,12 +2,17 @@
 
 import numpy as np
 from sklearn.naive_bayes import GaussianNB
-from sklearn import metrics
+from sklearn.metrics import accuracy_score
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
 
 def blob_classification(X, y):
-    return 0.0
+    X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.75, random_state=0)
+    gnb = GaussianNB()
+    y_pred = gnb.fit(X_train, y_train).predict(X_test)
+    #print("Number of mislabelled points out of a total %d points : %d" % (X_test.shape[0], (y_test != y_pred).sum()))
+    score = accuracy_score(y_test, y_pred)
+    return score
 
 def main():
     X,y = datasets.make_blobs(100, 2, centers=2, random_state=2, cluster_std=2.5)

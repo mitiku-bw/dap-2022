@@ -142,3 +142,7 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+
+# Remove mac specific files
+.DS_Store
